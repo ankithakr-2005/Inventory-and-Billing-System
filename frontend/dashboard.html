@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Axeyo Enterprises</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="d-flex" id="wrapper">
+
+        <div class="border-end bg-white" id="sidebar-wrapper">
+
+            <div class="sidebar-heading text-center py-4 text-white bg-primary fs-4 fw-bold">
+
+                Axeyo
+
+            </div>
+
+            <div class="list-group list-group-flush">
+
+                <a href="dashboard.html" class="list-group-item list-group-item-action bg-light p-3 active">
+
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard Overview
+
+                </a>
+
+                <a href="inventory.html" class="list-group-item list-group-item-action bg-light p-3">
+
+                    <i class="bi bi-box-seam me-2"></i> Inventory Management
+
+                </a>
+
+                <a href="invoices.html" class="list-group-item list-group-item-action bg-light p-3">
+
+                    <i class="bi bi-pencil-square me-2"></i> Create Invoice
+
+                </a>
+
+                <a href="view-invoices.html" class="list-group-item list-group-item-action bg-light p-3">
+
+                    <i class="bi bi-list-check me-2"></i> View Invoices
+
+                </a>
+
+                <a href="reports.html" class="list-group-item list-group-item-action bg-light p-3">
+
+                    <i class="bi bi-graph-up me-2"></i> Reports
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+                <div class="container-fluid">
+
+                    <button class="btn btn-primary d-block d-md-none" id="sidebarToggle">
+
+                        <i class="bi bi-list"></i>
+
+                    </button>
+
+                    <div class="ms-auto">
+
+                        <span class="navbar-text me-3" id="welcome-message">
+
+                            Welcome, Axeyo Admin!
+
+                        </span>
+
+                        <button class="btn btn-outline-primary" id="logoutBtn">
+
+                            <i class="bi bi-box-arrow-right me-1"></i> Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+
+            <div class="container-fluid p-4">
+
+                <h1 class="mt-4 text-primary">Dashboard Overview</h1>
+
+                <p class="text-secondary">Quick summary of inventory and sales performance.</p>
+
+
+
+                <div class="row g-4 mb-4">
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="card bg-primary text-white shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+
+                                        <div class="text-uppercase fw-bold small">Total Stock</div>
+
+                                        <div class="h3 fw-light mt-1" id="totalStock">5,120</div>
+
+                                    </div>
+
+                                    <i class="bi bi-boxes fs-1 opacity-50"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer bg-secondary text-white small">
+
+                                <a href="inventory.html" class="text-white text-decoration-none">View Details <i class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="card bg-success text-white shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+
+                                        <div class="text-uppercase fw-bold small">Today's Sales (₹)</div>
+
+                                        <div class="h3 fw-light mt-1" id="todaysSales">₹ 45,000</div>
+
+                                    </div>
+
+                                    <i class="bi bi-currency-dollar fs-1 opacity-50"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer bg-secondary text-white small">
+
+                                <a href="view-invoices.html" class="text-white text-decoration-none">View Invoices <i class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="card bg-info text-white shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+
+                                        <div class="text-uppercase fw-bold small">Total Invoices (Month)</div>
+
+                                        <div class="h3 fw-light mt-1" id="totalInvoices">67</div>
+
+                                    </div>
+
+                                    <i class="bi bi-file-earmark-text fs-1 opacity-50"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer bg-secondary text-white small">
+
+                                <a href="view-invoices.html" class="text-white text-decoration-none">Invoice History <i class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6">
+
+                        <div class="card bg-warning text-dark shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <div>
+
+                                        <div class="text-uppercase fw-bold small">Low Stock Items</div>
+
+                                        <div class="h3 fw-light mt-1" id="lowStockItems">5</div>
+
+                                    </div>
+
+                                    <i class="bi bi-exclamation-triangle fs-1 opacity-50"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer bg-secondary text-dark small">
+
+                                <a href="inventory.html" class="text-white text-decoration-none">Reorder Now <i class="bi bi-arrow-right"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="col-12">
+
+                        <div class="card shadow-sm">
+
+                            <div class="card-header bg-light fw-bold text-primary">Monthly Sales Trend</div>
+
+                            <div class="card-body">
+
+                                <canvas id="monthlySalesChart" style="max-height: 400px;"></canvas>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/auth.js"></script> <script src="js/dashboard.js"></script>
+
+</body>
+
+</html> 

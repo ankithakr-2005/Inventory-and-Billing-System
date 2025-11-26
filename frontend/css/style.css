@@ -1,0 +1,167 @@
+/*
+ * Axeyo Enterprises Granite Inventory & Billing System
+ * Unified Frontend Styles (style.css)
+ * ---------------------------------------------------
+ * Theme: Navy Blue (#003366) / Gray / White
+ */
+
+/* --- 1. Global Variables & Color Overrides --- */
+:root {
+    --axeyo-primary: #003366;       /* Deep Navy Blue */
+    --axeyo-primary-rgb: 0, 51, 102;
+    --axeyo-light: #f8f9fa;         /* Light Background */
+    --axeyo-secondary: #6c757d;     /* Bootstrap Gray */
+}
+
+/* Overrides for Bootstrap Primary Colors */
+.text-primary {
+    color: var(--axeyo-primary) !important;
+}
+.bg-primary {
+    background-color: var(--axeyo-primary) !important;
+}
+.btn-primary {
+    --bs-btn-bg: var(--axeyo-primary);
+    --bs-btn-border-color: var(--axeyo-primary);
+    --bs-btn-hover-bg: #004080; 
+    --bs-btn-hover-border-color: #004080;
+    --bs-btn-active-bg: #00264d;
+    --bs-btn-active-border-color: #00264d;
+}
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+    color: var(--axeyo-primary);
+}
+
+
+/* --- 2. Base Layout & Structure (Dashboard/General Pages) --- */
+
+html, body {
+    height: 100%;
+}
+body {
+    background-color: var(--axeyo-light);
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+    width: 15rem; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    /* Background handled by .bg-primary */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background-color: #e9ecef; 
+    color: var(--axeyo-primary);
+    font-weight: bold;
+    border-left: 5px solid var(--axeyo-primary);
+    border-radius: 0; /* Remove rounded corners for border effect */
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+/* Toggled State for Mobile */
+body.toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+}
+
+
+/* --- 3. Login Page Specifics (index.html) --- */
+
+.card {
+    border: none;
+    border-radius: 0.75rem; 
+}
+
+
+/* --- 4. Inventory & View Invoices Table Styles --- */
+
+/* Ensure table headers stand out */
+.table thead th {
+    font-weight: 600;
+    color: var(--axeyo-primary);
+}
+
+
+/* --- 5. Invoice Page Specifics (invoice.html) --- */
+
+/* Invoice details table alignment */
+.total-table td:first-child {
+    width: 60%; 
+    padding-right: 0;
+}
+.total-table td {
+    border: none; /* Remove border from total table */
+}
+
+/* Small adjustments for inputs within the item table for better density */
+.table-sm td input {
+    height: calc(1em + 0.5rem); 
+    padding: 0.25rem 0.5rem;
+}
+
+/* Styling for the total line */
+.table-primary {
+    --bs-table-bg: #e0f0ff; /* Light blue background for emphasis */
+    color: var(--axeyo-primary);
+}
+
+/* Print View Optimization */
+@media print {
+    /* Hide Navigation and Buttons for a clean printout */
+    #sidebar-wrapper, 
+    .navbar, 
+    .btn, 
+    .border-top.bg-light, 
+    .remove-item-btn, 
+    tfoot,
+    .list-group-flush {
+        display: none !important;
+    }
+    
+    /* Ensure the main content takes full width and remove padding */
+    #wrapper, 
+    #page-content-wrapper {
+        min-width: 100vw !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    .container-fluid {
+        padding: 0 !important;
+    }
+    /* Ensure borders are visible for the invoice table */
+    .table-bordered {
+        border-color: #000 !important;
+    }
+}
+
+
+/* --- 6. Media Queries for Responsiveness --- */
+
+/* Desktop: Sidebar always visible */
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    /* Hide the mobile toggle button on desktop */
+    #sidebarToggle {
+        display: none !important;
+    }
+}
